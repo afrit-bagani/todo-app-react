@@ -1,0 +1,238 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  height: 600px;
+  width: 600px;
+  background: linear-gradient(60deg, #0a0a0a, #3a4452);
+  border: 0.5px solid #98989b;
+  border-radius: 7px;
+  box-shadow: 10px 10px 50px #464647;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.heading {
+  margin: 7px 0px;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 70px;
+  text-align: center;
+  filter: drop-shadow(2px 2px 2px #ffffff);
+}
+.todo-container {
+  height: 90%;
+  width: 95%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  overflow: hidden;
+}
+.input-container {
+  width: 95%;
+}
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-input {
+  width: 220px;
+  padding: 14px 5px;
+  background-color: #f3f3f3;
+  border: none;
+  border-radius: 7px;
+  font-size: 20px;
+}
+
+.date-input,
+.time-input {
+  height: 57px;
+  width: 72px;
+  background-color: #f3f3f3;
+  border: 0.2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+}
+.date-input {
+  width: 98px;
+}
+.af-add-btn {
+  margin-bottom: 17px;
+  font-size: 55px;
+  font-weight: 700;
+  color: rgb(6, 118, 21);
+}
+.todo-list-container {
+  height: 100%;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+.task-ol-list {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.task-list {
+  width: 95%;
+  padding: 5px 5px;
+  margin-top: 7px;
+  background-color: #f3f3f3;
+  border-radius: 7px;
+  box-shadow: 2px 2px 20px #ffffff;
+  display: flex;
+  align-items: center;
+}
+.task-info-container {
+  min-width: 79%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 15px;
+}
+.task {
+  min-width: 60%;
+}
+
+.button-container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.af-done-btn {
+  color: blue;
+  font-size: 30px;
+}
+.done {
+  text-decoration: line-through;
+  color: grey;
+}
+.af-del-btn {
+  color: red;
+  font-size: 30px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    box-shadow: none; /* Optional: Remove shadow for mobile */
+  }
+
+  .heading {
+    font-size: 2.5rem; /* Adjust heading size */
+  }
+
+  .todo-container {
+    height: auto;
+    width: 100%;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px; /* Add space between items */
+    align-items: center;
+  }
+
+  .text-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .date-input,
+  .time-input,
+  .af-add-btn {
+    flex: 1;
+    margin: 5px; /* Space between inputs and button */
+  }
+
+  .date-input {
+    max-width: calc(50% - 10px); /* Adjust width for mobile */
+  }
+
+  .time-input {
+    max-width: calc(50% - 10px); /* Adjust width for mobile */
+  }
+
+  .af-add-btn {
+    max-width: 100%;
+    font-size: 2.5rem;
+  }
+
+  .todo-list-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task-ol-list {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-list {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #f3f3f3;
+    border-radius: 7px;
+    box-shadow: 2px 2px 20px #ffffff;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .task-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .task {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .time,
+  .date {
+    width: auto;
+  }
+
+  .button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .af-done-btn,
+  .af-del-btn {
+    font-size: 1.5rem;
+  }
+}
