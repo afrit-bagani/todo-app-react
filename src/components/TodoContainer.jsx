@@ -11,10 +11,12 @@ const TodoContainer = () => {
           ? { ...todoItem, isDone: !todoItem.isDone }
           : todoItem
       );
+      localStorage.setItem("todo", JSON.stringify(newState));
     } else if (action.type === "DELETE_TODO") {
       newState = state.filter(
         (todoItem) => todoItem.task !== action.payload.task
       );
+      localStorage.setItem("todo", JSON.stringify(newState));
     } else if (action.type === "ADD_ITEM") {
       if (action.payload.task == "") {
         alert("Please Enter Todo");
@@ -29,11 +31,14 @@ const TodoContainer = () => {
           isDone: false,
         },
       ];
+      localStorage.setItem("todo", JSON.stringify(newState));
     }
     return newState;
   };
 
-  let [todoData, dispatch] = useReducer(reducer, []);
+  const todoObj = JSON.parse(localStorage.getItem("todo"));
+
+  let [todoData, dispatch] = useReducer(reducer, todoObj ? todoObj : []);
   const handleAddButton = (event, taskElement, dateElement, timeElement) => {
     event.preventDefault();
     const task = taskElement.current.value;
